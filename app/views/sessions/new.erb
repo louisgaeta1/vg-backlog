@@ -1,0 +1,22 @@
+
+<div class="container">
+<h1> Login </h1>
+
+<%= erb :_errors %>
+
+<form method='post' action='/sessions'>
+
+  <div>
+    <input type="email" name="email" placeholder="Email">
+  </div>
+
+  <div>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+
+  <div>
+    <input type="Submit" value="Login">
+  </div>
+
+</form>
+</div>
