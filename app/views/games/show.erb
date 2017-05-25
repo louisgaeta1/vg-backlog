@@ -4,7 +4,7 @@
 <img src="<%=@game.image["small_url"]%>">
 
 <% if logged_in? %>
-<a href='/user/<%=current_user.id%>/list_item/new'> Add to list</a>
+<a href='/user/<%=current_user.id%>/backlog_item/new'> Add to Backlog</a>
 <% end %>
 
 <%= @game.description %>
