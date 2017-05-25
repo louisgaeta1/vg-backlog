@@ -1,3 +1,3 @@
 get '/' do
-  Igdb::Game.count.to_s
+  erb :index
 end
