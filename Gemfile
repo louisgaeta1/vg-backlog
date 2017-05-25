@@ -18,6 +18,8 @@ gem 'pry-byebug'
 gem 'bcrypt'
 gem 'igdb_api'
 gem 'dotenv'
+gem 'unirest'
+gem 'giantbomb-api', '~> 1.6.0'
 
 group :test do
   gem 'shoulda-matchers'

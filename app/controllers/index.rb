@@ -1,3 +1,3 @@
 get '/' do
-  erb :index
+  redirect '/games/page/1'
 end

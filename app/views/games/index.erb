@@ -1,0 +1,29 @@
+<div class="container center-align">
+  <h1>Video Game Backlog</h1>
+  <a href='/games/page/<%= params[:page_id].to_i - 1%>'>Previous</a>
+  <a href='/games/page/<%= params[:page_id].to_i + 1%>'>Next</a>
+
+  <table class="striped">
+    <thead>
+      <th>Game</th>
+      <th>Title</th>
+      <th>Platforms</th>
+      <th>Info</th>
+    </thead>
+    <tbody>
+  <% @games.each do |game| %>
+      <tr>
+        <td>
+          <% if game.image%>
+          <img src="<%=game.image["icon_url"]%>">
+          <% end %>
+        </td>
+        <td><a href="/games/<%=game.id%>"><%=game.name%></a></td>
+        <td><%=game.platforms.map{ |platform| platform["name"] }.join(", ")%></td>
+        <td><%=game.deck%></td>
+      </tr>
+  <%end%>
+</tbody>
+</table>
+
+</div>

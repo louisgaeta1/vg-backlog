@@ -1,0 +1,12 @@
+<div class="container">
+<h1><%=@game.name%></h1>
+
+<img src="<%=@game.image["small_url"]%>">
+
+<% if logged_in? %>
+<a href='/user/<%=current_user.id%>/list_item/new'> Add to list</a>
+<% end %>
+
+<%= @game.description %>
+
+</div>
