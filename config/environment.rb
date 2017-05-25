@@ -24,6 +24,8 @@ require 'pry-byebug'
 require 'bcrypt'
 require 'igdb_api'
 require 'dotenv'
+require 'unirest'
+require 'giantbomb-api'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -49,4 +51,6 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-Igdb.connect(ENV["IGDB_KEY"])
+# Igdb.connect(ENV["IGDB_KEY"])
+
+GiantBomb::Api.key(ENV['GB_KEY'])
