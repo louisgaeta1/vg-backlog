@@ -4,8 +4,8 @@
   <a href='/games/page/<%= params[:page_id].to_i + 1%>'>Next</a>
 
   <form method="get" action="/games/page/1">
-    <input type="text" name="query">
-    <input type="submit" value="Search">
+    <input type="text" name="query" placeholder="Enter Title Here">
+    <input class="waves-effect waves-light btn" type="submit" value="Search">
   </form>
 
   <table class="striped">
