@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Welcome <%=@user.username%></h1>
+
+
+  <table class="striped">
+    <thead>
+      <th>Game</th>
+      <th>Title</th>
+      <th>Platforms</th>
+      <th>Info</th>
+      <th>Hours Played</th>
+      <th>User Rating</th>
+    </thead>
+    <tbody>
+  <% @items.each do |item| %>
+      <tr>
+        <td>
+          <% if item.game.image%>
+          <img src="<%=item.game.image["icon_url"]%>">
+          <% end %>
+        </td>
+        <td><a href="/games/<%=item.game.id%>"><%=item.game.name%></a></td>
+        <td><%=item.game.platforms.map{ |platform| platform["name"] }.join(", ")%></td>
+        <td><%=item.game.deck%></td>
+        <td><%=item.hours_played%></td>
+        <td><%=item.user_rating%></td>
+        <td><form method="get" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>/edit">
+          <input type="submit" value="Update">
+          </form>
+          
+          <form method="post" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
+      </tr>
+  <%end%>
+</tbody>
+</table>
+</div>
