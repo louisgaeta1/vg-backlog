@@ -24,15 +24,17 @@
         <td><%=item.game.deck%></td>
         <td><%=item.hours_played%></td>
         <td><%=item.user_rating%></td>
+        <% if authorized?(@user) %>
         <td><form method="get" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>/edit">
           <input type="submit" value="Update">
           </form>
-          
+
           <form method="post" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete">
         </form>
       </td>
+      <% end %>
       </tr>
   <%end%>
 </tbody>

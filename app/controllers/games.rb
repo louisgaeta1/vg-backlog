@@ -5,7 +5,6 @@ get '/games/page/:page_id' do
   else
     @games = GiantBomb::Game.list(offset: ((params[:page_id].to_i - 1) * 50).to_s, limit: 50).map{ |game| JSON.parse(game.to_json) }
   end
-  # binding.pry
   erb :'games/index'
 end
 
