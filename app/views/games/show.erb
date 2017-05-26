@@ -4,7 +4,8 @@
 <img src="<%=@game.image["small_url"]%>">
 
 <% if logged_in? %>
-<a href='/user/<%=current_user.id%>/list_item/new'> Add to list</a>
+<button id="show-form">Add To Backlog</button>
+<%= erb :_new_item %>
 <% end %>
 
 <%= @game.description %>

@@ -12,3 +12,9 @@ post '/users' do
     erb :'users/new'
   end
 end
+
+get '/users/:id' do
+  @user = User.find(params[:id])
+  @items = @user.backlog_items
+  erb :'users/show'
+end

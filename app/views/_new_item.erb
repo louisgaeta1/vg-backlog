@@ -1,0 +1,5 @@
+<form method="post" action="/users/<%=current_user.id%>/games/<%=@game.id%>/backlog_items" id="backlog-form">
+  <input type="number" placeholder="Hours Played" name="backlog_item[hours_played]">
+  <input type="number" placeholder="User Rating" name="backlog_item[user_rating]">
+  <input type="submit" value="Add">
+</form>

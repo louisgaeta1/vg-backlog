@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%=@item.game.name%></h1>
+  <form method="post" action="/users/<%=current_user.id%>/backlog_items/<%=@item.id%>">
+    <input type="hidden" name="_method" value="put">
+    <label for="backlog_item[hours_played]">Hours Played</label>
+    <input type="number" value="<%=@item.hours_played%>" name="backlog_item[hours_played]">
+    <label for="backlog_item[user_rating]">User Rating</label>
+    <input type="number" value="<%=@item.user_rating%>"  name="backlog_item[user_rating]">
+    <input type="submit" value="Update">
+  </form>
+</div>
