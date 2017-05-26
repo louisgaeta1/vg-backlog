@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Welcome <%=@user.username%></h1>
 
-
+  <% if @items.length > 0 %>
   <table class="striped">
     <thead>
       <th>Game</th>
@@ -25,13 +25,13 @@
         <td><%=item.hours_played%></td>
         <td><%=item.user_rating%></td>
         <% if authorized?(@user) %>
-        <td><form method="get" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>/edit">
-          <input type="submit" value="Update">
+        <td>
+          <form method="get" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>/edit">
+          <input class="waves-effect waves-light btn" type="submit" value="Update">
           </form>
-
           <form method="post" action="/users/<%=@user.id%>/backlog_items/<%=item.id%>">
           <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
+          <input class="waves-effect waves-light btn" type="submit" value="Delete">
         </form>
       </td>
       <% end %>
@@ -39,4 +39,7 @@
   <%end%>
 </tbody>
 </table>
+<%else%>
+<h3>Your Backlog is Empty</h3>
+<%end%>
 </div>

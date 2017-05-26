@@ -1,13 +1,14 @@
 <div class="container">
 <h1><%=@game.name%></h1>
-
+<div class='center'>
 <img src="<%=@game.image["small_url"]%>">
-
+</div>
 <% if logged_in? %>
-<button id="show-form">Add To Backlog</button>
+<button class="waves-effect waves-light btn" id="show-form">Add To Backlog</button>
 <%= erb :_new_item %>
 <% end %>
 
+<div>
 <%= @game.description %>
-
+</div>
 </div>
