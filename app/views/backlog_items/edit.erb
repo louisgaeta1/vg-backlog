@@ -1,5 +1,7 @@
 <div class="container">
   <h1><%=@item.game.name%></h1>
+
+  <%= erb :_errors %>
   <form method="post" action="/users/<%=current_user.id%>/backlog_items/<%=@item.id%>">
     <input type="hidden" name="_method" value="put">
     <label for="backlog_item[hours_played]">Hours Played</label>
